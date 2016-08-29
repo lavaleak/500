@@ -15,10 +15,16 @@ public class GameCore : MonoBehaviour {
     public GameObject mainMenu;
     public Text credits;
     private Animator creditsShow;
-    public Enemy[] enemies;
+    public GameObject[] enemiesParent = new GameObject[5];
+    public Enemy[][] enemies = new Enemy[5][];
     public GameObject ship;
     private bool shipDropped = false;
     public GameObject pauseMenu;
+    static public float[] checkpoints = { 0.1f, 50.0f, 100.0f, 160.0f, 200.0f, 250.0f, 300.0f, 340.0f, 400.0f };
+    [HideInInspector]
+    static public int lastCheckpoint = 0;
+    public float startPos;
+    private bool paused = false;
 
     [Header("Skybox Blend Manager")]
     public Material[] skyBoxes;
@@ -45,9 +51,13 @@ public class GameCore : MonoBehaviour {
         audioSrc = GetComponent<AudioSource>();
         audioSrc.clip = musics[currentMusic];
         audioSrc.Play();
+        for (int i = 0; i < 5; i++) {
+            enemies[i] = enemiesParent[i].GetComponentsInChildren<Enemy>();
+        }
     }
 
     void nextMusic() {
+        audioSrc.volume = 0;
         currentMusic++;
         audioSrc.clip = musics[currentMusic];
         audioSrc.Play();
@@ -75,7 +85,10 @@ public class GameCore : MonoBehaviour {
     }
 
     void shipDrop() {
-        ship.transform.Translate(Random.Range(-0.5f,0.5f),0,1.0f);
+        AudioSource shipAudioSrc = ship.GetComponent<AudioSource>();
+        if (ship.transform.position.y == 125.0f)
+            shipAudioSrc.Play();
+        ship.transform.Translate(Random.Range(-0.5f,0.5f) * Time.deltaTime,0,1.0f);
         if (ship.transform.position.y < 60) {
             Destroy(ship);
             shipDropped = true;
@@ -84,9 +97,9 @@ public class GameCore : MonoBehaviour {
 
     void startGame() {
         if (playerStarted && shipDropped) {
-            liftingSpeed += 0.1f;
+            liftingSpeed += 0.05f;
 
-            if (transform.position.y > 0) {
+            if (transform.position.y > startPos) {
                 transform.Translate((-transform.up * liftingSpeed) * Time.deltaTime);
                 player.transform.Translate((transform.up * liftingSpeed) * Time.deltaTime);
                 if (blend > 0)
@@ -98,12 +111,12 @@ public class GameCore : MonoBehaviour {
                 RenderSettings.skybox.SetFloat("_Blend", blend);
             }
             else {
-                transform.position = new Vector3(0, 0, 0);
-                player.transform.position = new Vector3(0, 0, 6.3f);
+                transform.position = new Vector3(0, startPos, 0);
+                player.transform.position = new Vector3(0, startPos, 6.3f);
                 playerControl.animatorEvents.setGameStart();
                 if (playerControl.animatorEvents.swimming) {
                     liftingStart = true;
-                    liftingSpeed = 5.0f;
+                    liftingSpeed = 7.0f;
                     nextMusic();
                 }
             }
@@ -121,9 +134,6 @@ public class GameCore : MonoBehaviour {
     void pause() {
         Time.timeScale = 0;
         pauseMenu.SetActive(true);
-        if (Input.GetButtonDown("Cancel")) {
-            exitPause();
-        }
     }
 
     void exitPause() {
@@ -146,14 +156,16 @@ public class GameCore : MonoBehaviour {
     }
 
     void returnToCheckpoint() {
-        if (transform.position.y > playerControl.lastCheckpoint) {
+        if (transform.position.y > checkpoints[lastCheckpoint]) {
             player.transform.position = new Vector3(0, 600.0f, 6.3f);
             liftingStart = false;
             liftingSpeed = 20.0f;
             transform.Translate((-transform.up * liftingSpeed) * Time.deltaTime);
             audioSrc.pitch = -1.0f;
-            foreach (Enemy e in enemies) {
-                e.reset();
+            for (int i = 0; i < 5; i++) {
+                foreach (Enemy e in enemies[i]) {
+                    e.reset();
+                }
             }
         }
         else {
@@ -161,12 +173,14 @@ public class GameCore : MonoBehaviour {
             liftingSpeed = 5.0f;
             liftingStart = true;
             playerControl.died = false;
-            player.transform.position = new Vector3(0, playerControl.lastCheckpoint, 6.3f);
+            player.transform.position = new Vector3(0, checkpoints[lastCheckpoint], 6.3f);
         }
     }
 
     void Update() {
         if (liftingStart) {
+            if (audioSrc.volume < 1.0f)
+                audioSrc.volume += 0.01f;
             if (km < 500.0f)
                 transform.Translate((transform.up * liftingSpeed) * Time.deltaTime);
             if (km > 70.0f && currentSky == 0) {
@@ -201,15 +215,28 @@ public class GameCore : MonoBehaviour {
             returnToCheckpoint();
 
         if (Input.GetButtonDown("Cancel")) {
+            paused = true;
+        }
+
+        if (paused) {
             pause();
+        }
+
+        else {
+            exitPause();
         }
         
         if (transform.position.y >= 0)
             km = transform.position.y;
         counter.text = Mathf.Floor(km) + "km";
 
-        hideSun();
+        if (lastCheckpoint < checkpoints.Length - 1 && liftingStart) {
+            if (GameCore.km > checkpoints[lastCheckpoint + 1]) {
+                lastCheckpoint++;
+            }
+        }
 
+        hideSun();
         setSky();
     }
 }
