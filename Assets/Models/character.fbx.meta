@@ -1,0 +1,1043 @@
+fileFormatVersion: 2
+guid: 208335c7a38713f4c9c22026d44c056c
+timeCreated: 1472307176
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: arm_L
+    100002: arm_R
+    100004: boots
+    100006: //RootNode
+    100008: clavicle_L
+    100010: clavicle_R
+    100012: femur_L
+    100014: femur_R
+    100016: foot_L
+    100018: foot_L_end
+    100020: foot_R
+    100022: foot_R_end
+    100024: forearm_L
+    100026: forearm_R
+    100028: hand_L
+    100030: hand_L_end
+    100032: hand_R
+    100034: hand_R_end
+    100036: head
+    100038: head_end
+    100040: helmet
+    100042: hip_L
+    100044: hip_R
+    100046: human
+    100048: human_skeleton
+    100050: jetpack
+    100052: jetpack 1
+    100054: jetpack_end
+    100056: neck
+    100058: root
+    100060: spine1
+    100062: spine2
+    100064: spine3
+    100066: tibia_L
+    100068: tibia_R
+    400000: arm_L
+    400002: arm_R
+    400004: boots
+    400006: //RootNode
+    400008: clavicle_L
+    400010: clavicle_R
+    400012: femur_L
+    400014: femur_R
+    400016: foot_L
+    400018: foot_L_end
+    400020: foot_R
+    400022: foot_R_end
+    400024: forearm_L
+    400026: forearm_R
+    400028: hand_L
+    400030: hand_L_end
+    400032: hand_R
+    400034: hand_R_end
+    400036: head
+    400038: head_end
+    400040: helmet
+    400042: hip_L
+    400044: hip_R
+    400046: human
+    400048: human_skeleton
+    400050: jetpack
+    400052: jetpack 1
+    400054: jetpack_end
+    400056: neck
+    400058: root
+    400060: spine1
+    400062: spine2
+    400064: spine3
+    400066: tibia_L
+    400068: tibia_R
+    4300000: jetpack
+    4300002: helmet
+    4300004: boots
+    4300006: human
+    7400000: human_skeleton|human_begin
+    7400002: human_skeleton|human_flying-idle
+    7400004: human_skeleton|human_flying-left
+    7400006: human_skeleton|human_flying-right
+    7400008: human_skeleton|human_idle
+    7400010: human_skeleton|human_orbit
+    7400012: human_skeleton|human_skeletonAction
+    7400014: human_skeleton|human_skeletonAction.001
+    7400016: human_skeleton|human_swimming-idle
+    7400018: human_skeleton|human_swimming-left
+    7400020: human_skeleton|human_swimming-right
+    9500000: //RootNode
+    13700000: boots
+    13700002: helmet
+    13700004: human
+    13700006: jetpack
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: human_skeleton|human_begin
+      takeName: human_skeleton|human_begin
+      firstFrame: 0
+      lastFrame: 119
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: boots
+        weight: 1
+      - path: helmet
+        weight: 1
+      - path: human
+        weight: 1
+      - path: human_skeleton
+        weight: 1
+      - path: human_skeleton/root
+        weight: 1
+      - path: human_skeleton/root/hip_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L/foot_L_end
+        weight: 1
+      - path: human_skeleton/root/hip_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R/foot_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L/hand_L_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R/hand_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1/jetpack_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: jetpack
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: human_skeleton|human_flying-idle
+      takeName: human_skeleton|human_flying-idle
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: boots
+        weight: 1
+      - path: helmet
+        weight: 1
+      - path: human
+        weight: 1
+      - path: human_skeleton
+        weight: 1
+      - path: human_skeleton/root
+        weight: 1
+      - path: human_skeleton/root/hip_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L/foot_L_end
+        weight: 1
+      - path: human_skeleton/root/hip_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R/foot_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L/hand_L_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R/hand_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1/jetpack_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: jetpack
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: human_skeleton|human_flying-left
+      takeName: human_skeleton|human_flying-left
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: boots
+        weight: 1
+      - path: helmet
+        weight: 1
+      - path: human
+        weight: 1
+      - path: human_skeleton
+        weight: 1
+      - path: human_skeleton/root
+        weight: 1
+      - path: human_skeleton/root/hip_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L/foot_L_end
+        weight: 1
+      - path: human_skeleton/root/hip_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R/foot_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L/hand_L_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R/hand_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1/jetpack_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: jetpack
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: human_skeleton|human_flying-right
+      takeName: human_skeleton|human_flying-right
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: boots
+        weight: 1
+      - path: helmet
+        weight: 1
+      - path: human
+        weight: 1
+      - path: human_skeleton
+        weight: 1
+      - path: human_skeleton/root
+        weight: 1
+      - path: human_skeleton/root/hip_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L/foot_L_end
+        weight: 1
+      - path: human_skeleton/root/hip_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R/foot_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L/hand_L_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R/hand_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1/jetpack_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: jetpack
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: human_skeleton|human_idle
+      takeName: human_skeleton|human_idle
+      firstFrame: 0
+      lastFrame: 91
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: boots
+        weight: 1
+      - path: helmet
+        weight: 1
+      - path: human
+        weight: 1
+      - path: human_skeleton
+        weight: 1
+      - path: human_skeleton/root
+        weight: 1
+      - path: human_skeleton/root/hip_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L/foot_L_end
+        weight: 1
+      - path: human_skeleton/root/hip_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R/foot_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L/hand_L_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R/hand_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1/jetpack_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: jetpack
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: human_skeleton|human_orbit
+      takeName: human_skeleton|human_orbit
+      firstFrame: 0
+      lastFrame: 398
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: boots
+        weight: 1
+      - path: helmet
+        weight: 1
+      - path: human
+        weight: 1
+      - path: human_skeleton
+        weight: 1
+      - path: human_skeleton/root
+        weight: 1
+      - path: human_skeleton/root/hip_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L/foot_L_end
+        weight: 1
+      - path: human_skeleton/root/hip_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R/foot_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L/hand_L_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R/hand_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1/jetpack_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: jetpack
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: human_skeleton|human_swimming-idle
+      takeName: human_skeleton|human_swimming-idle
+      firstFrame: 0
+      lastFrame: 28
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: boots
+        weight: 1
+      - path: helmet
+        weight: 1
+      - path: human
+        weight: 1
+      - path: human_skeleton
+        weight: 1
+      - path: human_skeleton/root
+        weight: 1
+      - path: human_skeleton/root/hip_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L/foot_L_end
+        weight: 1
+      - path: human_skeleton/root/hip_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R/foot_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L/hand_L_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R/hand_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1/jetpack_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: jetpack
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: human_skeleton|human_swimming-left
+      takeName: human_skeleton|human_swimming-left
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: boots
+        weight: 1
+      - path: helmet
+        weight: 1
+      - path: human
+        weight: 1
+      - path: human_skeleton
+        weight: 1
+      - path: human_skeleton/root
+        weight: 1
+      - path: human_skeleton/root/hip_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L/foot_L_end
+        weight: 1
+      - path: human_skeleton/root/hip_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R/foot_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L/hand_L_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R/hand_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1/jetpack_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: jetpack
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: human_skeleton|human_swimming-right
+      takeName: human_skeleton|human_swimming-right
+      firstFrame: 0
+      lastFrame: 34
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: boots
+        weight: 1
+      - path: helmet
+        weight: 1
+      - path: human
+        weight: 1
+      - path: human_skeleton
+        weight: 1
+      - path: human_skeleton/root
+        weight: 1
+      - path: human_skeleton/root/hip_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L
+        weight: 1
+      - path: human_skeleton/root/hip_L/femur_L/tibia_L/foot_L/foot_L_end
+        weight: 1
+      - path: human_skeleton/root/hip_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R
+        weight: 1
+      - path: human_skeleton/root/hip_R/femur_R/tibia_R/foot_R/foot_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_L/arm_L/forearm_L/hand_L/hand_L_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/clavicle_R/arm_R/forearm_R/hand_R/hand_R_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/jetpack 1/jetpack_end
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head
+        weight: 1
+      - path: human_skeleton/root/spine1/spine2/spine3/neck/head/head_end
+        weight: 1
+      - path: jetpack
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
