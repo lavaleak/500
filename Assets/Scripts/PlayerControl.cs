@@ -2,17 +2,16 @@
 using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
-    public float speed = 5.0f;
-    public float rotationSpeed = 600.0f;
+    public float speed = 7.0f;
+    public float rotationSpeed = 700.0f;
     public GameObject character;
     [HideInInspector]
     public AnimatorEvents animatorEvents;
-    static public float cameraLimit;
-    [HideInInspector]
-    public float lastCheckpoint = 0.1f;
+    static public float cameraLimit = 3.0f;
     [HideInInspector]
     public bool died = false;
 
+    /*
     void Awake() {
         Camera cam = Camera.main;
         if (cam.aspect > 1.5) { // 16:10, 16:9
@@ -27,6 +26,7 @@ public class PlayerControl : MonoBehaviour {
             cameraLimit = 9.0f;
         }
     }
+    */
 
     void Start() {
         animatorEvents = character.GetComponent<AnimatorEvents>();
