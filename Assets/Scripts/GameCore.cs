@@ -41,7 +41,6 @@ public class GameCore : MonoBehaviour {
     private int currentMusic = 0;
 
     void Start() {
-        Cursor.visible = false;
         RenderSettings.skybox = skyBoxes[currentSky];
         playerControl = player.GetComponent<PlayerControl>();
         creditsShow = credits.GetComponent<Animator>();
@@ -89,7 +88,7 @@ public class GameCore : MonoBehaviour {
         AudioSource shipAudioSrc = ship.GetComponent<AudioSource>();
         if (ship.transform.position.y == 125.0f)
             shipAudioSrc.Play();
-        ship.transform.Translate(Random.Range(-0.5f,0.5f) * Time.deltaTime,0, 10.0f * Time.deltaTime);
+        ship.transform.Translate(Random.Range(-5.0f,5.0f) * Time.deltaTime,0, 10.0f * Time.deltaTime);
         if (ship.transform.position.y < 60) {
             Destroy(ship);
             shipDropped = true;
