@@ -1,0 +1,77 @@
+* {
+	font-family: Trebuchet, "Trebuchet MS", sans-serif;
+	color: #431DA3;
+}
+
+*:focus {
+	outline: none;
+}
+
+body {
+	background-image: url("images/sky1.jpg");
+}
+
+#container {
+	margin: 40px auto 0;
+	width: 400px;
+	background-color: #68BDFF;
+	background-size: cover;
+	padding: 25px;
+	text-align: center;
+	height: auto;
+}
+
+.row {
+	width: 100%;
+	height: auto;
+}
+
+button {
+	width: 48%;
+	padding: 10px;
+	margin: 0 0 10px;
+	background-color: #B2349C;
+	border: none;
+	color: #ffffff;
+	float: left;
+	min-height: 64px;
+}
+
+button:hover {
+	background-color: #7F1EA3;
+}
+
+button:active {
+	background-color: #431DA3;
+}
+
+#win {
+	margin-right: 2%;
+}
+
+#mac {
+	margin-left: 2%;
+}
+
+#ld36 {
+	width: 100%;
+}
+
+img {
+	width: 400px;
+	margin-bottom: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: #B2349C;
+}
+
+@media only screen and (max-width: 600px)  {
+	#container {
+		width: 300px;
+	}
+	img {
+		width: 300px;
+	}
+}
