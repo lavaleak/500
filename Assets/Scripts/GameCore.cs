@@ -41,6 +41,7 @@ public class GameCore : MonoBehaviour {
     private int currentMusic = 0;
 
     void Start() {
+        Cursor.visible = false;
         RenderSettings.skybox = skyBoxes[currentSky];
         playerControl = player.GetComponent<PlayerControl>();
         creditsShow = credits.GetComponent<Animator>();
@@ -88,7 +89,7 @@ public class GameCore : MonoBehaviour {
         AudioSource shipAudioSrc = ship.GetComponent<AudioSource>();
         if (ship.transform.position.y == 125.0f)
             shipAudioSrc.Play();
-        ship.transform.Translate(Random.Range(-0.5f,0.5f) * Time.deltaTime,0,1.0f);
+        ship.transform.Translate(Random.Range(-0.5f,0.5f) * Time.deltaTime,0, 10.0f * Time.deltaTime);
         if (ship.transform.position.y < 60) {
             Destroy(ship);
             shipDropped = true;
@@ -97,7 +98,7 @@ public class GameCore : MonoBehaviour {
 
     void startGame() {
         if (playerStarted && shipDropped) {
-            liftingSpeed += 0.05f;
+            liftingSpeed += 0.05f * Time.deltaTime;
 
             if (transform.position.y > startPos) {
                 transform.Translate((-transform.up * liftingSpeed) * Time.deltaTime);
@@ -133,12 +134,20 @@ public class GameCore : MonoBehaviour {
 
     void pause() {
         Time.timeScale = 0;
+        audioSrc.volume = 0.5f;
         pauseMenu.SetActive(true);
     }
 
-    void exitPause() {
+    public void exitPause() {
         Time.timeScale = 1.0f;
+        audioSrc.volume = 1.0f;
         pauseMenu.SetActive(false);
+        paused = false;
+    }
+
+    public void quitGame() {
+        Debug.Log("quit");
+        Application.Quit();
     }
 
     void hideSun() {
@@ -214,7 +223,7 @@ public class GameCore : MonoBehaviour {
         if (playerControl.died)
             returnToCheckpoint();
 
-        if (Input.GetButtonDown("Cancel")) {
+        if (Input.GetButtonDown("Cancel") && liftingStart) {
             paused = true;
         }
 
