@@ -50,21 +50,17 @@ public class PlayerControl : MonoBehaviour {
         if (transX > 0) {
             if (rotY < 110 && rotY > 70) {
                 rotateY = 0;
-                if (transform.position.x >= cameraLimit) {
-                    transX = -1.0f;
-                }
-            } else {
-                transX = 0;
             }
+            if (transform.position.x >= cameraLimit) {
+                transX = 0;
+            } 
         }
-
+        
         if (transX < 0) {
             if (rotY < 290 && rotY > 250) {
                 rotateY = 0;
-                if (transform.position.x <= -cameraLimit) {
-                    transX = 0;
-                }
-            } else {
+            }
+            if (transform.position.x <= -cameraLimit) {
                 transX = 0;
             }
         }

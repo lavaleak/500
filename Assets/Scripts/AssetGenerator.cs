@@ -35,7 +35,7 @@ public class AssetGenerator : MonoBehaviour {
     
     void Start () {
         generate(assets100, 10, 0, 90);
-        generate(assets100rare, 2, 0, 90);
+        generate(assets100rare, 1, 0, 90);
 
         generate(assets200, 10, 125, 200, 15.0f, 30.0f, -30.0f, 30.0f);
         generate(assets200rare, 1, 125, 200);
