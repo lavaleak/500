@@ -20,7 +20,7 @@ public class GameCore : MonoBehaviour {
     public GameObject ship;
     private bool shipDropped = false;
     public GameObject pauseMenu;
-    static public float[] checkpoints = { 0.1f, 50.0f, 100.0f, 160.0f, 200.0f, 250.0f, 300.0f, 340.0f, 400.0f };
+    static public float[] checkpoints = { 0.1f, 50.0f, 100.0f, 170.0f, 200.0f, 250.0f, 330.0f, 400.0f };
     [HideInInspector]
     static public int lastCheckpoint = 0;
     public float startPos;
