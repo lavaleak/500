@@ -45,11 +45,24 @@ button:active {
 	background-color: #431DA3;
 }
 
-#win {
+.jamBtn {
+	background-color: #5B22A9;
+	min-height: 32px;
+}
+
+.jamBtn:hover {
+	background-color: #431DA3;
+}
+
+.jamBtn:active {
+	background-color: #9E1B6E;
+}
+
+.win {
 	margin-right: 2%;
 }
 
-#mac {
+.mac {
 	margin-left: 2%;
 }
 
