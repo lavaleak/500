@@ -20,11 +20,12 @@ public class GameCore : MonoBehaviour {
     public GameObject ship;
     private bool shipDropped = false;
     public GameObject pauseMenu;
-    static public float[] checkpoints = { 0.1f, 50.0f, 100.0f, 170.0f, 200.0f, 250.0f, 330.0f, 400.0f };
+    static public float[] checkpoints = { 0.1f, 50.0f, 100.0f, 170.0f, 200.0f, 250.0f, 327.0f, 390.0f };
     [HideInInspector]
     static public int lastCheckpoint = 0;
     public float startPos;
     private bool paused = false;
+    private bool reseted = false;
 
     [Header("Skybox Blend Manager")]
     public Material[] skyBoxes;
@@ -34,6 +35,7 @@ public class GameCore : MonoBehaviour {
     private int currentSky = 0;
     public bool changeSky = false;
     public float changeSkySpeed = 1.0f;
+    private float finalTimer = 0;
 
     [Header("Music Manager")]
     private AudioSource audioSrc;
@@ -54,6 +56,42 @@ public class GameCore : MonoBehaviour {
         for (int i = 0; i < 5; i++) {
             enemies[i] = enemiesParent[i].GetComponentsInChildren<Enemy>();
         }
+    }
+
+    void reset() {
+        sun.transform.position = new Vector3(168.03f, 101.0f, 673.0f);
+        transform.position = new Vector3(0.0f,105.0f,0.0f);
+        player.transform.position = new Vector3(0.0f, -105.0f, 6.3f);
+        ship.transform.position = new Vector3(0.0f, 125.0f, 12.5f);
+        liftingStart = false;
+        playerStarted = false;
+        shipDropped = false;
+        lastCheckpoint = 0;
+        currentSky = 0;
+        km = 0.0f;
+        liftingSpeed = 5.0f;
+        startPos = 0.0f;
+        changeSky = false;
+        changeSkySpeed = 1.0f;
+        currentMusic = 0;
+        RenderSettings.skybox = skyBoxes[currentSky];
+        creditsShow.SetBool("reset", true);
+        creditsShow.SetBool("creditShow", false);
+        blend = 1.0f;
+        RenderSettings.skybox.SetFloat("_Blend", blend);
+        counter.color = new Color(1.0f, 1.0f, 1.0f, 0);
+        finalText.SetActive(false);
+        mainMenu.SetActive(true);
+        audioSrc.clip = musics[currentMusic];
+        audioSrc.Play();
+        playerControl.animatorEvents.reset();
+        for (int i = 0; i < 5; i++) {
+            foreach (Enemy e in enemies[i]) {
+                e.reset();
+            }
+        }
+        finalTimer = 0;
+        reseted = false;
     }
 
     void nextMusic() {
@@ -90,14 +128,15 @@ public class GameCore : MonoBehaviour {
             shipAudioSrc.Play();
         ship.transform.Translate(Random.Range(-5.0f,5.0f) * Time.deltaTime,0, 10.0f * Time.deltaTime);
         if (ship.transform.position.y < 60) {
-            Destroy(ship);
+            ship.transform.position = new Vector3(1000.0f, 125.0f, 12.5f);
+            shipAudioSrc.Stop();
             shipDropped = true;
         }
     }
 
     void startGame() {
         if (playerStarted && shipDropped) {
-            liftingSpeed += 0.05f * Time.deltaTime;
+            liftingSpeed += 0.2f * Time.deltaTime;
 
             if (transform.position.y > startPos) {
                 transform.Translate((-transform.up * liftingSpeed) * Time.deltaTime);
@@ -116,7 +155,7 @@ public class GameCore : MonoBehaviour {
                 playerControl.animatorEvents.setGameStart();
                 if (playerControl.animatorEvents.swimming) {
                     liftingStart = true;
-                    liftingSpeed = 7.0f;
+                    liftingSpeed = 5.0f;
                     nextMusic();
                 }
             }
@@ -210,7 +249,12 @@ public class GameCore : MonoBehaviour {
                 transform.position = new Vector3(0, 500.0f, 0);
                 playerControl.animatorEvents.setOrbit();
                 audioSrc.Stop();
-                Invoke("showFinalText", 10);
+                if (finalTimer >= 5.0f)
+                    showFinalText();
+                if (finalTimer >= 10.0f)
+                    reseted = true;
+                finalTimer += 1.0f * Time.deltaTime;
+                Debug.Log(finalTimer);
             }
             if (km > 110.0f)
                 sun.transform.Translate(0, 0, 0.2f);
@@ -242,6 +286,11 @@ public class GameCore : MonoBehaviour {
             if (GameCore.km > checkpoints[lastCheckpoint + 1]) {
                 lastCheckpoint++;
             }
+        }
+
+        if (reseted) {
+            reset();
+            creditsShow.SetBool("reset", false);
         }
 
         hideSun();

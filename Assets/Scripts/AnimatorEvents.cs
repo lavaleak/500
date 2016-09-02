@@ -55,4 +55,18 @@ public class AnimatorEvents : MonoBehaviour {
         movingX = false;
         anim.SetBool("movingX", movingX);
     }
+
+    public void reset() {
+        stopMoving();
+        orbit = false;
+        flying = false;
+        swimming = false;
+        gameStart = false;
+        swimmingTurbine.SetActive(false);
+        flyingTurbine.SetActive(false);
+        anim.SetBool("orbit", orbit);
+        anim.SetBool("flying", flying);
+        anim.SetBool("swimming", swimming);
+        anim.SetBool("gameStart", gameStart);
+    }
 }
