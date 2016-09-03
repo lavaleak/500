@@ -249,9 +249,9 @@ public class GameCore : MonoBehaviour {
                 transform.position = new Vector3(0, 500.0f, 0);
                 playerControl.animatorEvents.setOrbit();
                 audioSrc.Stop();
-                if (finalTimer >= 5.0f)
+                if (finalTimer >= 7.0f)
                     showFinalText();
-                if (finalTimer >= 10.0f)
+                if (finalTimer >= 20.0f)
                     reseted = true;
                 finalTimer += 1.0f * Time.deltaTime;
                 Debug.Log(finalTimer);
