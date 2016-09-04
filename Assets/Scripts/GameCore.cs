@@ -4,50 +4,43 @@ using UnityEngine.UI;
 
 public class GameCore : MonoBehaviour {
     static public float km = 0.0f;
-    public float liftingSpeed = 1.0f;
-    public Text counter;
+    static public bool liftingStart = false;
+    static public float[] checkpoints = { 0.1f, 50.0f, 100.0f, 170.0f, 200.0f, 250.0f, 327.0f, 390.0f };
+    static public int lastCheckpoint = 0;
     public GameObject finalText;
     public GameObject player;
-    private PlayerControl playerControl;
-    static public bool liftingStart = false;
-    private bool playerStarted = false;
     public GameObject sun;
     public GameObject mainMenu;
+    public GameObject ship;
+    public GameObject pauseMenu;
+    public Text counter;
     public Text credits;
-    private Animator creditsShow;
+    public GameObject arrowsUpDown;
+    public GameObject arrowsLeftRight;
+    public float startPos;
+    public float liftingSpeed = 1.0f;
     public GameObject[] enemiesParent = new GameObject[5];
     public Enemy[][] enemies = new Enemy[5][];
-    public GameObject ship;
+    public AudioClip[] musics;
+    public Animator[] arrowsAnimators;
+    private Animator creditsShow;
+    private SkyBoxManager skyboxMngr;
+    private PlayerControl playerControl;
+    private bool playerStarted = false;
     private bool shipDropped = false;
-    public GameObject pauseMenu;
-    static public float[] checkpoints = { 0.1f, 50.0f, 100.0f, 170.0f, 200.0f, 250.0f, 327.0f, 390.0f };
-    [HideInInspector]
-    static public int lastCheckpoint = 0;
-    public float startPos;
     private bool paused = false;
     private bool reseted = false;
-
-    [Header("Skybox Blend Manager")]
-    public Material[] skyBoxes;
-    public Color[] fogColors;
-    [Range(0, 1.0f)]
-    public float blend = 0.0f;
-    private int currentSky = 0;
-    public bool changeSky = false;
-    public float changeSkySpeed = 1.0f;
     private float finalTimer = 0;
-
-    [Header("Music Manager")]
     private AudioSource audioSrc;
-    public AudioClip[] musics;
     private int currentMusic = 0;
+    private bool showUpDown = true;
+    private bool showLeftRight = true;
+    private bool changeMusic = false;
 
     void Start() {
-        RenderSettings.skybox = skyBoxes[currentSky];
         playerControl = player.GetComponent<PlayerControl>();
         creditsShow = credits.GetComponent<Animator>();
-        blend = 1.0f;
-        RenderSettings.skybox.SetFloat("_Blend", blend);
+        skyboxMngr = GetComponent<SkyBoxManager>();
         counter.color = new Color(1.0f,1.0f, 1.0f,0);
         finalText.SetActive(false);
         audioSrc = GetComponent<AudioSource>();
@@ -59,29 +52,26 @@ public class GameCore : MonoBehaviour {
     }
 
     void reset() {
-        sun.transform.position = new Vector3(168.03f, 101.0f, 673.0f);
         transform.position = new Vector3(0.0f,105.0f,0.0f);
+        sun.transform.position = new Vector3(168.03f, 101.0f, 673.0f);
         player.transform.position = new Vector3(0.0f, -105.0f, 6.3f);
         ship.transform.position = new Vector3(0.0f, 125.0f, 12.5f);
+        skyboxMngr.reset();
+        changeMusic = false;
         liftingStart = false;
         playerStarted = false;
         shipDropped = false;
         lastCheckpoint = 0;
-        currentSky = 0;
         km = 0.0f;
         liftingSpeed = 5.0f;
         startPos = 0.0f;
-        changeSky = false;
-        changeSkySpeed = 1.0f;
         currentMusic = 0;
-        RenderSettings.skybox = skyBoxes[currentSky];
         creditsShow.SetBool("reset", true);
-        creditsShow.SetBool("creditShow", false);
-        blend = 1.0f;
-        RenderSettings.skybox.SetFloat("_Blend", blend);
+        creditsShow.SetBool("creditsShow", false);
         counter.color = new Color(1.0f, 1.0f, 1.0f, 0);
         finalText.SetActive(false);
         mainMenu.SetActive(true);
+        audioSrc.loop = true;
         audioSrc.clip = musics[currentMusic];
         audioSrc.Play();
         playerControl.animatorEvents.reset();
@@ -95,30 +85,12 @@ public class GameCore : MonoBehaviour {
     }
 
     void nextMusic() {
-        audioSrc.volume = 0;
-        currentMusic++;
-        audioSrc.clip = musics[currentMusic];
-        audioSrc.Play();
-    }
-
-    void setSky() {
-        if (changeSky) {
-            if (blend < 1.0f) {
-                blend += 0.1f * changeSkySpeed * Time.deltaTime;
-                RenderSettings.skybox.SetFloat("_Blend", blend);
-            }
-            else if (currentSky < skyBoxes.Length - 1) {
-                blend = 1.0f;
-                RenderSettings.skybox.SetFloat("_Blend", blend);
-
-                currentSky++;
-                RenderSettings.skybox = skyBoxes[currentSky];
-
-                blend = 0;
-                RenderSettings.skybox.SetFloat("_Blend", 0);
-
-                changeSky = false;
-            }
+        if (changeMusic) {
+            audioSrc.volume = 0;
+            currentMusic++;
+            audioSrc.clip = musics[currentMusic];
+            audioSrc.Play();
+            changeMusic = false;
         }
     }
 
@@ -126,7 +98,7 @@ public class GameCore : MonoBehaviour {
         AudioSource shipAudioSrc = ship.GetComponent<AudioSource>();
         if (ship.transform.position.y == 125.0f)
             shipAudioSrc.Play();
-        ship.transform.Translate(Random.Range(-5.0f,5.0f) * Time.deltaTime,0, 10.0f * Time.deltaTime);
+        ship.transform.Translate(Random.Range(-7.5f,7.5f) * Time.deltaTime,0, 10.0f * Time.deltaTime);
         if (ship.transform.position.y < 60) {
             ship.transform.position = new Vector3(1000.0f, 125.0f, 12.5f);
             shipAudioSrc.Stop();
@@ -141,13 +113,10 @@ public class GameCore : MonoBehaviour {
             if (transform.position.y > startPos) {
                 transform.Translate((-transform.up * liftingSpeed) * Time.deltaTime);
                 player.transform.Translate((transform.up * liftingSpeed) * Time.deltaTime);
-                if (blend > 0)
-                    blend -= 0.01f;
+                skyboxMngr.startGame();
                 if (km < 100.0f) {
                     creditsShow.SetBool("creditsShow", true);
-                    RenderSettings.fogColor = fogColors[0];
                 }
-                RenderSettings.skybox.SetFloat("_Blend", blend);
             }
             else {
                 transform.position = new Vector3(0, startPos, 0);
@@ -156,14 +125,14 @@ public class GameCore : MonoBehaviour {
                 if (playerControl.animatorEvents.swimming) {
                     liftingStart = true;
                     liftingSpeed = 5.0f;
-                    nextMusic();
+                    changeMusic = true;
                 }
             }
         }
         else if (playerStarted && !shipDropped) {
             shipDrop();
         }
-        else if (Input.anyKeyDown && !playerStarted) {
+        else if (Input.anyKeyDown && !playerStarted && WhiteFade.fadeIsOver) {
             counter.color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
             playerStarted = true;
             mainMenu.SetActive(false);
@@ -188,13 +157,12 @@ public class GameCore : MonoBehaviour {
         Application.Quit();
     }
 
-    void hideSun() {
+    void underWater() {
         if (km < 100.0f) {
             sun.SetActive(false);
         }
         else {
             sun.SetActive(true);
-            RenderSettings.fogColor = fogColors[1];
         }
     }
 
@@ -224,37 +192,39 @@ public class GameCore : MonoBehaviour {
         }
     }
 
+    void tutorial() {
+        if (showLeftRight && liftingStart) {
+            arrowsLeftRight.SetActive(true);
+            arrowsAnimators[0].SetBool("tutorialStart",true);
+            arrowsAnimators[1].SetBool("tutorialStart", true);
+            showLeftRight = false;
+        }
+        if (showUpDown && liftingStart && km > 25.0f) {
+            arrowsUpDown.SetActive(true);
+            arrowsAnimators[2].SetBool("tutorialStart", true);
+            arrowsAnimators[3].SetBool("tutorialStart", true);
+            showUpDown = false;
+        }
+    }
+
     void Update() {
         if (liftingStart) {
             if (audioSrc.volume < 1.0f)
                 audioSrc.volume += 0.01f;
             if (km < 500.0f)
                 transform.Translate((transform.up * liftingSpeed) * Time.deltaTime);
-            if (km > 70.0f && currentSky == 0) {
-                changeSky = true;
-            }
-            else if (km > 200.0f && currentSky == 1) {
-                changeSky = true;
-                RenderSettings.fogColor = fogColors[2];
-            }
-            else if (km > 300.0f && currentSky == 2) {
-                changeSky = true;
-                RenderSettings.fogColor = fogColors[3];
-            }
-            else if (km > 400.0f && currentSky == 3) {
-                changeSky = true;
-                RenderSettings.fogColor = fogColors[4];
-            }
             else if (km >= 500.0f) {
                 transform.position = new Vector3(0, 500.0f, 0);
                 playerControl.animatorEvents.setOrbit();
-                audioSrc.Stop();
+                if (audioSrc.loop) {
+                    changeMusic = true;
+                }
+                audioSrc.loop = false;
                 if (finalTimer >= 7.0f)
                     showFinalText();
-                if (finalTimer >= 20.0f)
+                if (finalTimer >= 25.0f)
                     reseted = true;
                 finalTimer += 1.0f * Time.deltaTime;
-                Debug.Log(finalTimer);
             }
             if (km > 110.0f)
                 sun.transform.Translate(0, 0, 0.2f);
@@ -266,7 +236,7 @@ public class GameCore : MonoBehaviour {
         if (playerControl.died)
             returnToCheckpoint();
 
-        if (Input.GetButtonDown("Cancel") && liftingStart) {
+        if (Input.GetButtonDown("Menu") && liftingStart) {
             paused = true;
         }
 
@@ -293,7 +263,8 @@ public class GameCore : MonoBehaviour {
             creditsShow.SetBool("reset", false);
         }
 
-        hideSun();
-        setSky();
+        nextMusic();
+        underWater();
+        tutorial();
     }
 }
