@@ -18,7 +18,7 @@ body {
 	background-size: cover;
 	padding: 25px;
 	text-align: center;
-	height: auto;
+	min-height: 525px;
 }
 
 .row {
@@ -47,7 +47,7 @@ button:active {
 
 .jamBtn {
 	background-color: #5B22A9;
-	min-height: 32px;
+	min-height: 52px;
 }
 
 .jamBtn:hover {
@@ -86,5 +86,24 @@ a {
 	}
 	img {
 		width: 300px;
+	}
+
+	#container {
+		min-height: 485px;
+	}
+}
+
+@media only screen and (max-width: 400px)  {
+	#container {
+		width: 200px;
+	}
+	img {
+		width: 200px;
+	}
+	button, .jamBtn {
+		height: 68px;
+	}
+	#container {
+		min-height: 480px;
 	}
 }
