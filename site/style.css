@@ -1,3 +1,9 @@
+html, body {
+	margin: 0;
+	height: 100%;
+	overflow: hidden;
+}
+
 * {
 	font-family: Trebuchet, "Trebuchet MS", sans-serif;
 	color: #431DA3;
@@ -11,30 +17,47 @@ body {
 	background-image: url("images/sky1.jpg");
 }
 
+#wrapper {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 #container {
-	margin: 40px auto 0;
+	margin: auto;
 	width: 400px;
 	background-color: #68BDFF;
 	background-size: cover;
 	padding: 25px;
 	text-align: center;
-	min-height: 525px;
+	height: auto;
 }
 
 .row {
 	width: 100%;
 	height: auto;
+	display: flex;
+	/* align-items: left; */
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+	/* order: 2; */
+	flex-direction: row;
+}
+
+.row a {
+	width: 48%;
+	min-height: 64px;
 }
 
 button {
-	width: 48%;
+	width: 100%;
 	padding: 10px;
-	margin: 0 0 10px;
 	background-color: #B2349C;
 	border: none;
 	color: #ffffff;
-	float: left;
-	min-height: 64px;
+	height: 100%;
+	cursor: pointer;
 }
 
 button:hover {
@@ -43,31 +66,6 @@ button:hover {
 
 button:active {
 	background-color: #431DA3;
-}
-
-.jamBtn {
-	background-color: #5B22A9;
-	min-height: 52px;
-}
-
-.jamBtn:hover {
-	background-color: #431DA3;
-}
-
-.jamBtn:active {
-	background-color: #9E1B6E;
-}
-
-.win {
-	margin-right: 2%;
-}
-
-.mac {
-	margin-left: 2%;
-}
-
-#ld36 {
-	width: 100%;
 }
 
 img {
@@ -87,10 +85,6 @@ a {
 	img {
 		width: 300px;
 	}
-
-	#container {
-		min-height: 485px;
-	}
 }
 
 @media only screen and (max-width: 400px)  {
@@ -99,11 +93,5 @@ a {
 	}
 	img {
 		width: 200px;
-	}
-	button, .jamBtn {
-		height: 68px;
-	}
-	#container {
-		min-height: 480px;
 	}
 }
