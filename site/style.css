@@ -34,30 +34,44 @@ body {
 	height: auto;
 }
 
+#box {
+	margin-bottom: -8px;
+}
+
 .row {
 	width: 100%;
 	height: auto;
 	display: flex;
-	/* align-items: left; */
-    justify-content: space-around;
-    /* flex-wrap: wrap; */
-	/* order: 2; */
-	flex-direction: row;
+	align-content: center;
 }
 
-.row a {
-	width: 48%;
-	min-height: 64px;
+.row p {
+	margin-bottom: 23px;
+}
+
+.buttons__row {
+	align-items: start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+	flex-direction: row;
+	align-content: space-between;
+}
+
+.buttons__row a {
+	margin-bottom: 8px;
+	width: calc(50% - 8px);
+	padding-right: 8px;
 }
 
 button {
 	width: 100%;
-	padding: 10px;
+	height: 64px;
+	padding: 10px 20px;
 	background-color: #B2349C;
 	border: none;
 	color: #ffffff;
-	height: 100%;
 	cursor: pointer;
+	font-size: 0.8rem;
 }
 
 button:hover {
@@ -70,7 +84,6 @@ button:active {
 
 img {
 	width: 400px;
-	margin-bottom: 10px;
 }
 
 a {
