@@ -4,7 +4,11 @@
 A Ludum Dare 36 game about raise and raise.  
 _Game developed in 2016, code as-is, no changes, don't judge._  
 
-[Website 🌐](https://lavaleak.github.io/500/site/) | [Itch.io 🕹️](https://lavaleakgames.itch.io)
+
+[Website 🌐](https://lavaleak.github.io/500/site/) | [Itch.io 🕹️](https://lavaleakgames.itch.io)  
+[✨Gameplay #LD36 VOD by Alistar ▶️✨](https://www.twitch.tv/cantgetourname/v/89524039)  
+
+
 
 <div style="float:left;display:inline-block;width:100%">
 <img src="./screenshots/500__0009_Camada%2014.jpg" style="width:40%" />
@@ -15,7 +19,9 @@ _Game developed in 2016, code as-is, no changes, don't judge._
 
 </center>
 
+
 ---
+
 
 ### Credits
 **Game by [Lava Leak Games](https://lavaleakgames.itch.io)**  
